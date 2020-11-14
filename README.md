@@ -1,4 +1,4 @@
-# -elk-project
+# elk-project
 
 ## Heading 2 
 
