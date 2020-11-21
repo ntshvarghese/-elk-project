@@ -96,13 +96,15 @@ Metricbeat - Collects machine metrics, such as uptime.
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the my-playbook. file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the filebeat.yml file to /etc/filebeat/.
+cp /etc/ansible/roles/filebeat.yml /etc/filebeat/
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Update the hosts file to include the private IP addresses of the other machines to be configured to ansible. 
+1. nano /etc/ansible/hosts
+2. 10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- Run the playbook, and navigate to http://localhost:5601/app/kibana to check that the installation worked as expected.
+1. Check with sudo docker ps if the ELK container is running with correct ports. 
+2. curl http://localhost:5601/app/kibana
+
