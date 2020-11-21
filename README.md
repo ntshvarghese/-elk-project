@@ -63,20 +63,27 @@ The primary benefit of Ansible is it allows IT administrators to automate away t
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- Install docker 
-- Download Image 
-- 
+
+1. Create a new Virtual Network - to allow access between the VM's
+2. Create a new Virtual Machines
+3. Create a new playbook - to automate a set of tasks.
+
+
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+(Images/success.png)
+
+
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- Jump Box Provisioner
+- Web1
+- Web2
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+Filebeats
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
